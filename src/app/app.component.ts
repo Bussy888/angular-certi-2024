@@ -9,5 +9,14 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 20;
+  title:number = 20;
+  constructor(){
+    console.log('substract ', this.substract(8,4))
+  }
+  public sum(num1: number, num2:number): number{
+    return num1+num2
+  }
+  public substract(num1: number, num2:number): number{
+    return num1-num2
+  }
 }
