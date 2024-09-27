@@ -1,0 +1,25 @@
+.calculator {
+    border: 1px green solid;
+    padding: 20px;
+
+    .buttons-container{
+        display: flex;
+        flex-direction: row;
+
+        .sum{
+            background-color: yellow;
+        }
+        .mul{
+            background-color: papayawhip;
+        }
+        .reset{
+            background-color: aquamarine;
+        }
+    }
+    .history {
+        margin-top: 20px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        width: 200px;
+      }
+}
