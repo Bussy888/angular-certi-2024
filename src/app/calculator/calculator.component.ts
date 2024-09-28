@@ -35,6 +35,6 @@ export class CalculatorComponent {
     this.box1value = 0;
     this.box2value = 0;
     this.reset.emit(null);
-    this.history = []; // Limpiar historial al resetear
+    this.history = []; 
   }
 }
