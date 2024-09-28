@@ -22,7 +22,36 @@
 
 </calculator>
 
-<p *ngIf="1 === 1">Variables are equal</p>
-@if(1 ===1){
+<p *ngIf="1 === 1; else elseold">Variables are equal</p>
+<ng-template #elseold>
+
+    <p >old, result is false</p>
+</ng-template>
+
+@if(var1 === var2){
     <p>New Sintax, variables are equal</p>
+}@else{
+    <p>New Sintax is false</p>
+}
+
+<p *ngFor="let item of ['a', 'b','c','d']; let i = index">
+    old for, value:{{item}}, index {{i}}
+</p>
+@for (item of ['a','b','c','d','e','f','g','h']; track $index) {
+    <p>new for, {{item}}, index{{$index}}</p>
+}
+
+<div [ngSwitch]="var1">
+    <p *ngSwitchCase="0">Var 1 es igual 0</p>
+    <p *ngSwitchCase="1">Var 1 es igual 1</p>
+    <p *ngSwitchCase="2">Var 1 es igual 2</p>
+    <p *ngSwitchCase="3">Var 1 es igual 3</p>
+    
+    <p *ngSwitchDefault>var 1 no tiene valor</p>
+</div>
+
+@switch(var1){
+    @case(0){<p> New sintax, var is 0</p>}
+    @case(1){<p> New sintax, var is 1</p>}
+    @default{<p> New sintax, var has no value</p>}
 }
