@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { UserCardComponent } from './user-card/user-card.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { CommonModule } from '@angular/common';
+import { PersonComponent } from './person/person.component';
 
 interface IPerson {
   name: string
@@ -13,7 +14,7 @@ interface IPerson {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, UserCardComponent, CalculatorComponent, CommonModule],
+  imports: [RouterOutlet, UserCardComponent, CalculatorComponent, CommonModule, PersonComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -22,6 +23,13 @@ export class AppComponent {
   result:number=0;
   title: number = 10;
   animals: string[] = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
+
+  females:number=0
+  males:number=0
+  discounts:number=0
+  persons:any[]=[{gender:0,name:"Fernanda Andia",age:22},{gender:1,name:"Mateo Michel",age:15},{gender:0,name:"Priscila Guzman",age:48}]
+
+
 
   person: IPerson = {
     name: 'Juan',
@@ -44,7 +52,8 @@ export class AppComponent {
 
     console.log('Nullish Coalesing:',  this.var2 ?? this.var3  )
     console.log('OR:', this.var2 || this.var1)
-
+    
+    this.calculateTotals()
 
     //console.log('subtract ', this.subtract(8, 4))
     //console.log('MAP:', this.animals.map((animal: string) => (animal + 'new')))
@@ -78,6 +87,16 @@ export class AppComponent {
     this.result = event ?? 0
   }
 
+  public calculateTotals() {
+    this.females = this.persons.filter(p => p.gender === 0).length;
+    this.males = this.persons.filter(p => p.gender === 1).length;
+    this.discounts = this.persons.filter(p => p.age > 18).length;
+  }
+
+  public deleteDiscounts() {
+    this.persons = this.persons.filter(p => p.age <= 18);
+    this.calculateTotals();
+  }
 
 
   //  function sumar(){
