@@ -30,6 +30,7 @@ export class AppComponent {
   persons:any[]=[{gender:0,name:"Fernanda Andia",age:22},{gender:1,name:"Mateo Michel",age:15},{gender:0,name:"Priscila Guzman",age:48}]
 
 
+  userCardCreated: boolean = true
 
   person: IPerson = {
     name: 'Juan',

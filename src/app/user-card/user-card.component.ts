@@ -15,6 +15,16 @@ export class UserCardComponent {
 
   @Output() sendData = new EventEmitter()
 
+  constructor(){
+    console.log("user card Constructor")
+  }
+  ngOnInit(){
+    console.log("user card ngOnInit")
+  }
+  ngOnDestroy(){
+    console.log("user card ngOnDestroy")
+  }
+
   public onSendData(){
     //console.log('onSendData in child')
     this.sendData.emit('Hi from child component')

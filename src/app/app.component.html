@@ -5,15 +5,16 @@
 
 <p>Only Pares {{ getArray() }}</p>
 
-<user-card 
-    name="juan" 
-    [email]="'juan@gmail.com'"
-    (sendData)="receiveData($event)"
-    >
+<button (click)="userCardCreated = !userCardCreated">create and destroy user card</button>
+@if(userCardCreated) {
+  <user-card name="juan" [email]="'juan@gmail.com'" (sendData)="receiveData($event)">
+    <p>My HTML from father</p>
+    <button>My button from father</button>
+  </user-card>
+} @else {
+  <p>user card destroyed</p>
+}
 
-    <p>My HTML from FATHER</p>
-    <button>My button from Father</button>
-</user-card>
 <p>RESULT: {{result}}</p>
 <calculator 
 (sum)="onResult($event)" 
