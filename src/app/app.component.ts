@@ -20,6 +20,10 @@ interface IPerson {
 })
 
 export class AppComponent {
+
+  users = [{ name: 'abc', 'email': 'abc@gmail.com' }, { name: 'dfg', 'email': 'dfg@gmail.com' }]
+  selectedUser:any = this.users[0];
+
   result:number=0;
   title: number = 10;
   animals: string[] = ['a', 'b', 'c', 'd', 'e', 'f', 'g']
