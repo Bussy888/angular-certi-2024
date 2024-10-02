@@ -1,52 +1,86 @@
-
-import { AfterContentInit, Component, DoCheck, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from "@angular/core";
+import {
+  AfterContentInit,
+  AfterViewInit,
+  Component,
+  DoCheck,
+  ElementRef,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  Output,
+  SimpleChanges,
+  ViewChild,
+} from "@angular/core";
 import { FormsModule } from "@angular/forms";
 
 @Component({
-  selector: 'user-card',
+  selector: "user-card",
   standalone: true,
   imports: [FormsModule],
-  templateUrl: './user-card.component.html',
-  styleUrl: './user-card.component.scss'
+  templateUrl: "./user-card.component.html",
+  styleUrl: "./user-card.component.scss",
 })
-export class UserCardComponent implements OnInit, OnDestroy, OnChanges, DoCheck, AfterContentInit  {
+export class UserCardComponent
+  implements
+    OnInit,
+    OnDestroy,
+    OnChanges,
+    DoCheck,
+    AfterContentInit,
+    AfterViewInit
+{
+  @Input() name: string = "";
+  @Input() email: string = "";
 
-  @Input() name:string = ''
-  @Input() email:string = ''
+  @Output() sendData = new EventEmitter();
 
-  @Output() sendData = new EventEmitter()
+  @ViewChild('buttonTest') buttonTest!: ElementRef
 
+  password: string = "";
+  showButton:boolean = false
 
-  password:string = ''
-
-  constructor(){
-    console.log("user card Constructor")
+  constructor() {
+    console.log("user card constructor");
   }
-  ngOnInit(){
-    console.log("user card ngOnInit")
+
+  ngOnInit(): void {
+    console.log("user card on init");
+
+    // this.password = this.name + ' ' +  this.email + ' PASSWORD'
   }
-  ngOnDestroy(){
-    console.log("user card ngOnDestroy")
+
+  ngOnDestroy(): void {
+    console.log("user card Destroy");
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('CHANGES:', changes)
+    console.log("CHANGES:", changes);
 
-    this.password = changes['name'].currentValue + ' ' + changes['email'].currentValue + ' PASSWORD'
-
+    this.password =
+      changes["name"].currentValue +
+      " " +
+      changes["email"].currentValue +
+      " PASSWORD";
   }
-  
+
   ngDoCheck(): void {
-    console.log('DO CHECK user card')  
-   }
- 
-   ngAfterContentInit(): void {
-       console.log('NG AFTER CONTENT INIT')
-   }
-
-  public onSendData(){
-    //console.log('onSendData in child')
-    this.sendData.emit('Hi from child component')
+    console.log("DO CHECK user card");
   }
 
+  ngAfterContentInit(): void {
+    console.log("NG AFTER CONTENT INIT");
+  }
+
+  ngAfterViewInit(): void {
+    console.log('NG AFTER VIEW INIT')
+    console.log('BUTTON TEST', this.buttonTest)   
+    this.buttonTest.nativeElement.textContent = 'aaaaaaaaaaaaaaaaaaaaaa'
+  }
+
+  public onSendData() {
+    //console.log('onSendData in child')
+    this.sendData.emit("Hi from child component");
+  }
 }
