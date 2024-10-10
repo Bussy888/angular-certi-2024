@@ -1,0 +1,51 @@
+.card-container {
+    border: 1px solid #b2ebf2; // Borde
+    border-radius: 8px; 
+    padding: 16px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    width: 300px; 
+    transition: transform 0.2s; 
+    position: relative; 
+  
+    &:hover {
+      transform: scale(1.05); 
+    }
+  
+    .card-header {
+      display: flex; 
+      gap: 10px; 
+      margin-bottom: 12px; 
+  
+      button {
+        border: none; 
+        border-radius: 5px; 
+        padding: 8px 12px; 
+        cursor: pointer; 
+        transition: background-color 0.3s; 
+        color: #000; // Cambia el color del texto según sea necesario
+        background-color: white; // Color de fondo por defecto
+  
+        &.active {
+          // Colores para las pestañas activas
+          // Estos colores se aplicarán solo si se aplica la clase 'active'
+        }
+  
+        &:hover {
+          background-color: #b2ebf2; 
+        }
+      }
+    }
+  
+    .card-content {
+      h3, h4 {
+        margin: 8px 0; 
+      }
+  
+      .message-container {
+        display: flex;
+        flex-direction: column; 
+        gap: 4px; 
+      }
+    }
+  }
+  

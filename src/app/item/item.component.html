@@ -1,0 +1,6 @@
+<div [ngClass]="{ 'blue': user.type === 'student', 'orange': user.type === 'professor' }">
+    {{ user.name }} - {{ user.type }}
+    <button (click)="onShow()">Show</button>
+    <button (click)="onDelete()">Delete</button>
+  </div>
+  

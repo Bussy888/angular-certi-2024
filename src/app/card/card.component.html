@@ -1,0 +1,35 @@
+<div class="card-container" [ngStyle]="{'background-color': getBackgroundColor()}">
+    <div class="card-header">
+      <button (click)="setActiveTab('personal')" [ngClass]="{'active': activeTab === 'personal'}" [ngStyle]="{'background-color': activeTab === 'personal' ? getBackgroundColor() : 'white'}">Personal</button>
+      <button (click)="setActiveTab('geographic')" [ngClass]="{'active': activeTab === 'geographic'}" [ngStyle]="{'background-color': activeTab === 'geographic' ? getBackgroundColor() : 'white'}">Geographic</button>
+      <button (click)="setActiveTab('messages')" [ngClass]="{'active': activeTab === 'messages'}" [ngStyle]="{'background-color': activeTab === 'messages' ? getBackgroundColor() : 'white'}">Message</button>
+    </div>
+  
+    <div class="card-content">
+      <div *ngIf="activeTab === 'personal'">
+        <h3>Name: {{ user.name }} </h3>
+        <h3>Last Name: {{ user.lastName }}</h3>
+        <p>Type: {{ user.type }}</p>
+        <p *ngIf="user.type === 'student'">Score: {{ (user.firstTestScore + user.secondTestScore + user.finalTestScore) / 3 }}</p>
+        <p *ngIf="user.type === 'professor'">Subject: {{ user.subject }}</p>
+      </div>
+  
+      <div *ngIf="activeTab === 'geographic'">
+        <h4>Address</h4>
+        <p>Adress: {{ user.address.number }} {{ user.address.street }}, {{ user.address.zone }}</p>
+        <p>Country: {{ user.country }}</p>
+        <p>Province: {{ user.province }}</p>
+      </div>
+  
+      <div *ngIf="activeTab === 'messages'">
+        <h4>Messages</h4>
+        <app-search (search)="onSearch($event)"></app-search>
+        <div class="message-container">
+          <ul>
+            <li *ngFor="let message of filteredMessages">{{ message }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  

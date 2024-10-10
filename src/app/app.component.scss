@@ -1,0 +1,25 @@
+.container {
+    display: flex; /* Usar flexbox para organizar los elementos */
+    flex-direction: column; /* Organizar en columnas */
+    align-items: stretch; /* Alinear elementos al ancho del contenedor */
+    margin-top: 50px;
+    margin-left: 20px;
+  }
+  
+  .content {
+    display: flex; /* Usar flexbox para alinear lista y card en una fila */
+    justify-content: space-between; /* Espacio entre lista y card */
+    margin-top: 20px; /* Espacio entre el buscador y el contenido */
+    width: 100%; /* Asegurarse de que el ancho sea completo */
+  }
+  
+  app-list {
+    width: 40%; /* La lista ocupa el 40% del ancho */
+    margin-right: 20px; /* Espacio entre la lista y la tarjeta */
+  }
+  
+  app-card {
+    width: 55%; /* La tarjeta ocupa el 55% del ancho */
+    /* Si hay margen o padding que afecte el tamaño total, ajústalo aquí */
+  }
+  

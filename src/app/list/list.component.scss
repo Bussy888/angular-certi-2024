@@ -1,0 +1,43 @@
+.user-list {
+    display: flex; // Usar flexbox
+    flex-direction: column; // Asegura que los elementos estén en una sola columna
+    gap: 10px; // Espacio entre los elementos
+    padding: 20px; // Espaciado interno
+    border: 2px solid #ccc; // Borde para el contenedor
+    border-radius: 8px; // Bordes redondeados
+    background-color: #f9f9f9; // Fondo claro
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Sombra para dar profundidad
+    width: 80%; // Ancho del contenedor
+    position: relative; // Cambiar a relativo para que funcione bien en el layout
+    margin-right: 20px; // Espacio entre la lista y el card
+  }
+  
+  .user-item {
+    display: flex; // Usar flexbox para los items
+    justify-content: space-between; // Espacio entre el nombre y los botones
+    align-items: center; // Alinear los items verticalmente
+    background-color: #ffffff; // Fondo para los items
+    border: 1px solid #ccc; // Borde ligero
+    border-radius: 5px; // Bordes redondeados
+    padding: 10px; // Espaciado interno
+    width: 90%; // Ocupa todo el ancho del contenedor
+    transition: transform 0.2s; // Transición suave para efectos de hover
+  
+    &.student {
+      background-color: #e0f7fa; // Color específico para estudiantes
+    }
+  
+    &.professor {
+      background-color: #ffe0b2; // Color específico para profesores
+    }
+  
+    &:hover {
+      transform: translateY(-2px); // Efecto de elevación al pasar el mouse
+    }
+  }
+  
+  .user-actions {
+    display: flex; // Usar flexbox para los botones
+    gap: 10px; // Espacio entre los botones
+  }
+  

@@ -1,0 +1,33 @@
+
+.blue {
+    background-color: lightblue; // Puedes cambiar a cualquier color que prefieras
+    color: black; // Color del texto
+    padding: 10px; // Espaciado interno
+    border-radius: 5px; // Bordes redondeados
+    margin-bottom: 10px; // Espacio entre elementos
+  }
+  
+  // Color para profesores
+  .orange {
+    background-color: lightcoral; // Puedes cambiar a cualquier color que prefieras
+    color: black; // Color del texto
+    padding: 10px; // Espaciado interno
+    border-radius: 5px; // Bordes redondeados
+    margin-bottom: 10px; // Espacio entre elementos
+  }
+  
+  // Estilo para el botón
+  button {
+    margin-left: 10px; // Espaciado a la izquierda
+    padding: 5px 10px; // Espaciado interno del botón
+    border: none; // Sin borde
+    border-radius: 5px; // Bordes redondeados
+    cursor: pointer; // Cambia el cursor al pasar sobre el botón
+  }
+  
+  // Efecto al pasar el ratón sobre el botón
+  button:hover {
+    background-color: darkgray; // Cambia el color al pasar el ratón
+    color: white; // Cambia el color del texto al pasar el ratón
+  }
+  

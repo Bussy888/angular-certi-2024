@@ -1,0 +1,14 @@
+<ul class="user-list">
+    <li *ngFor="let user of users" class="user-item" [ngClass]="{'student': user.type === 'student', 'professor': user.type === 'professor'}">
+      <div class="user-info">
+        {{ user.name }} - {{ user.type | titlecase }}
+      </div>
+      <div class="user-actions">
+        <button (click)="onShow(user)">Show</button>
+        <button (click)="onDelete(user)">Delete</button>
+      </div>
+    </li>
+  </ul>
+  <!-- Mostrar el CardComponent si hay un usuario seleccionado -->
+  <!-- <app-card *ngIf="selectedUser" [user]="selectedUser"></app-card> -->
+  
