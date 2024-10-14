@@ -1,4 +1,20 @@
-<user-card [name]="selectedUser.name" [email]="selectedUser.email" (sendData)="receiveData($event)">
+<p>PIPES</p>
+
+<P> {{ users | json }} </P>
+<p> {{ 'juan' | uppercase }} </p>
+<p> {{ 'JUAN' | lowercase }} </p>
+<p> {{ 'hola mundo' | titlecase }}</p>
+<p> {{ 'Tue Oct 27 15:35:08 CDT 2009' | date: 'dd/MM/YYYY'  }} </p>
+
+<p> MY FISRT PIPE PURE </p>
+<p>{{ students | pure }}</p>
+<p> MY FIRST PIPE IMPURE</p>
+<p>{{ students | impure }}</p>
+
+
+<button (click)="students.push(12)">add neew number</button>
+<button (click)="addNumber()">add neew number in ts</button>
+<!-- <user-card [name]="selectedUser.name" [email]="selectedUser.email" (sendData)="receiveData($event)">
   <p>My HTML from father</p>
   <button>My button from father</button>
 </user-card>
@@ -11,7 +27,7 @@
 <div *ngCreateHtml="userCardCreated" (sendMessage)="getColor($event)">
   <p>MY CUSTON STRUCTURAL DIRECTIVE</p>
   <p> EXAMPLE </p>
-</div>
+</div> -->
 <!-- 
 <h1>Hello, {{ title + 2 }}</h1>
 <p>Add {{ sum(3,5) }}</p>
