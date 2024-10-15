@@ -6,6 +6,14 @@
     align-items: center;
     justify-content: center;
 }
+.example-card {
+    max-width: 400px;
+  }
+  
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+}
 
 .column {
     flex: 1;
@@ -39,4 +47,5 @@
         background-color: greenyellow;
         color: BLACK;
     }
+    
 }

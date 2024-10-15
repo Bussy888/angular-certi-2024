@@ -8,6 +8,8 @@ import { filter, from, map, tap } from "rxjs";
 import { AppColorsDirective } from "./app-colors.directive";
 import { PurePipe } from "./pure.pipe";
 import { ImpurePipe } from "./impure.pipe";
+import {MatCardModule} from '@angular/material/card';
+import { MatButtonModule } from "@angular/material/button";
 
 interface IPerson {
   name: string;
@@ -26,7 +28,9 @@ interface IPerson {
     CounterComponent,
     AppColorsDirective,
     PurePipe,
-    ImpurePipe
+    ImpurePipe,
+    MatCardModule,
+    MatButtonModule
   ],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.scss",
