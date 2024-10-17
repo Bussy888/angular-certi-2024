@@ -1,11 +1,12 @@
 import { Component } from "@angular/core";
-import { RouterOutlet } from "@angular/router";
+import { RouterOutlet, RouterLink } from "@angular/router";
 import { UserCardComponent } from "./user-card/user-card.component";
 import { CalculatorComponent } from "./calculator/calculator.component";
 import { CommonModule } from "@angular/common";
 import { CounterComponent } from "./counter/counter.component";
 import { filter, from, map, tap } from "rxjs";
 import { AppColorsDirective } from "./app-colors.directive";
+//import { CreateHtmlDirective } from "./create-html.directive";
 import { PurePipe } from "./pure.pipe";
 import { ImpurePipe } from "./impure.pipe";
 import {MatCardModule} from '@angular/material/card';
@@ -22,6 +23,7 @@ interface IPerson {
   standalone: true,
   imports: [
     RouterOutlet,
+    RouterLink,
     UserCardComponent,
     CalculatorComponent,
     CommonModule,
