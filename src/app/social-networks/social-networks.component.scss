@@ -1,0 +1,19 @@
+/* social-networks.component.css */
+.social-networks {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .card {
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+  }
+  
+  .youtube { background-color: red; }
+  .facebook { background-color: lightblue; }
+  .tiktok { background-color: purple; }
+  .instagram { background-color: yellow; color: black; }
+  .whatsapp { background-color: green; }
+  

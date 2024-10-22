@@ -1,0 +1,53 @@
+.user-component {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    width: 300px;
+  }
+.user-info {
+    padding: 20px;
+  }
+  
+  .subscription-type span {
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: black;
+    background-color: lightgray;
+  }
+  
+  .subscription-type span.selected {
+    background-color: green;
+    color: white;
+  }
+  
+  .social-network-box {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+  }
+  
+  .add-btn, .remove-btn {
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 5px;
+    font-weight: bold;
+  }
+  
+  .close-account-btn {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
