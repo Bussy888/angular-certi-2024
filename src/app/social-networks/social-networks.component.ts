@@ -39,7 +39,7 @@ export class SocialNetworksComponent {
           if (user.subscriptionType == 'premium') {
             if (user.amountAvailable >= 5) {
               user.amountAvailable -= 5;
-              user.notifications.push(`${network.platform} sent a new message`);
+              user.notifications.push(`${network.platform} sent a new ${network.type}`);
             } else {
               console.log(`${user.name} does not have enough balance to receive a notification from ${network.platform}`);
             }
