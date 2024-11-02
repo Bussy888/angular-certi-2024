@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "firebase:deploy": "ng build && firebase deploy",
+    "s3:deploy": "ng build && aws s3 sync ./dist/angular-course-2024/browser s3://angular-course-2024-mateo --profile angular-project"
   },
   "private": true,
   "dependencies": {
